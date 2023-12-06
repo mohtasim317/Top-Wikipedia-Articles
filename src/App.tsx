@@ -4,14 +4,17 @@ import ArticlesList from "./Components/ArticlesList/ArticlesList";
 import { WikipediaArticles } from "./Types/types";
 import "./App.css";
 import SearchButton from "./Components/SearchButton/SearchButton";
+import { yesterdaysDate } from "./Util/util";
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
+  const [dateValue, setDateValue] = useState<string[]>(yesterdaysDate());
 
   async function fetchArticles() {
     try {
+      const [year, month, date] = dateValue;
       const fetchedData = await fetch(
-        "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/2015/10/10"
+        `https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${year}/${month}/${date}`
       );
       const jsonData = await fetchedData.json();
       const allArticles = jsonData.items[0].articles;
@@ -32,6 +35,7 @@ function App(): JSX.Element {
       <main className="MainSection">
         <h1>Top Wikipedia Articles</h1>
         <div>
+          <input type="date"></input>
           <SearchButton fetchArticles={fetchArticles}></SearchButton>
         </div>
         <ArticlesList>
