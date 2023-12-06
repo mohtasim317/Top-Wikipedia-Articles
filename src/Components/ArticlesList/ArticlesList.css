@@ -1,13 +1,13 @@
 .ArticlesList {
-    display: flex;
-    flex-direction: column;
-    min-width: 400px;
-    max-width: 800px;
-    width: 55%;
-    background-color: white;
-    border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 800px;
+  width: 100%;
+  background-color: white;
+  border-radius: 16px;
 }
 
 .Views {
-    color: rgb(115,118,128)
+  color: rgb(115, 118, 128);
 }

@@ -26,12 +26,16 @@ function App(): JSX.Element {
 
   return (
     <div className="App">
-      <h1>Top Wikipedia Articles</h1>
-      <ArticlesList>
-        {wikiArticles.map(({ article, views, rank }) => {
-          return <ArticleTile article={article} views={views} rank={rank} />;
-        })}
-      </ArticlesList>
+      <nav></nav>
+      <main className="MainSection">
+        <h1>Top Wikipedia Articles</h1>
+        <input type="date"></input>
+        <ArticlesList>
+          {wikiArticles.map(({ article, views, rank }) => {
+            return <ArticleTile article={article} views={views} rank={rank} />;
+          })}
+        </ArticlesList>
+      </main>
     </div>
   );
 }
