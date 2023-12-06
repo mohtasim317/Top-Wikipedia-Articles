@@ -9,3 +9,7 @@ export interface WikipediaArticles {
 export interface ArticlesListProps {
   children: React.ReactNode;
 }
+
+export interface SearchButtonProps {
+  fetchArticles: () => void;
+}
