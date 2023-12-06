@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import ArticleTile from "./Components/ArticlesTile/ArticleTile";
 import { WikipediaArticles } from "./Types/types";
 import "./App.css";
+import ArticlesList from "./Components/ArticlesList/ArticlesList";
 
-function App(): React.ReactElement {
+function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
 
   useEffect(() => {
@@ -26,11 +27,11 @@ function App(): React.ReactElement {
   return (
     <div className="App">
       <h1>Top Wikipedia Articles</h1>
-      <div>
+      <ArticlesList>
         {wikiArticles.map(({ article, views, rank }) => {
           return <ArticleTile article={article} views={views} rank={rank} />;
         })}
-      </div>
+      </ArticlesList>
     </div>
   );
 }
