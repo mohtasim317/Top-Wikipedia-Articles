@@ -9,9 +9,9 @@ function ArticleTile({
 }: WikipediaArticles): React.ReactElement {
   return (
     <div className="ArticleTile">
-      <p>{article}</p>
-      <p>{views}</p>
       <p>{rank}</p>
+      <p>{article}</p>
+      <p className="Views">{views}</p>
     </div>
   );
 }
