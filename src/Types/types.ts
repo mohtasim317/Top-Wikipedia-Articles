@@ -13,3 +13,8 @@ export interface ArticlesListProps {
 export interface SearchButtonProps {
   fetchArticles: () => void;
 }
+
+export interface DatePickerProps {
+  dateValue: string;
+  setDateValue: (string: string) => void;
+}

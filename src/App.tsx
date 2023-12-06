@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ArticleTile from "./Components/ArticlesTile/ArticleTile";
 import ArticlesList from "./Components/ArticlesList/ArticlesList";
-import { WikipediaArticles } from "./Types/types";
-import "./App.css";
+import DatePicker from "./Components/DatePicker/DatePicker";
 import SearchButton from "./Components/SearchButton/SearchButton";
+import { WikipediaArticles } from "./Types/types";
 import { yesterdaysDate } from "./Util/util";
+import "./App.css";
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
@@ -35,11 +36,7 @@ function App(): JSX.Element {
       <main className="MainSection">
         <h1>Top Wikipedia Articles</h1>
         <div>
-          <input
-            type="date"
-            value={dateValue}
-            onChange={(e) => setDateValue(e.target.value)}
-          ></input>
+          <DatePicker dateValue={dateValue} setDateValue={setDateValue} />
           <SearchButton fetchArticles={fetchArticles}></SearchButton>
         </div>
         <ArticlesList>
