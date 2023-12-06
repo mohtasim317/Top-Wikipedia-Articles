@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ArticleTile from "./Components/ArticlesTile/ArticleTile";
+import ArticlesList from "./Components/ArticlesList/ArticlesList";
 import { WikipediaArticles } from "./Types/types";
 import "./App.css";
-import ArticlesList from "./Components/ArticlesList/ArticlesList";
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);

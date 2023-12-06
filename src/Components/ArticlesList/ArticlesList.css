@@ -1,0 +1,8 @@
+.ArticlesList {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    max-width: 800px;
+    width: 55%;
+}
