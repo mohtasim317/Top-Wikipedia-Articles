@@ -1,8 +1,8 @@
 import React from "react";
 import { ArticleTileProps } from "../../Types/types";
-import "../ArticlesTile/ArticleTile.css";
 import favoritedPin from "../../Images/favoritedPin.svg";
 import unFavoritedPin from "../../Images/unFavoritedPin.svg";
+import "./ArticleTile.css";
 
 function ArticleTile({
   article,

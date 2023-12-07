@@ -1,6 +1,6 @@
 import React from "react";
 import { NumResultsDropdownProps } from "../../Types/types";
-import "../NumResultsDropdown/NumResultsDropdown.css";
+import "./NumResultsDropdown.css";
 
 function NumResultsDropdown({
   numResults,
