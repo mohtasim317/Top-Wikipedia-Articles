@@ -1,11 +1,12 @@
 export function yesterdaysDate() {
-  let d = new Date();
-  d.setDate(d.getDate() - 1);
-  return d.toISOString().split("T")[0];
-}
+  const timeNow = new Date();
+  const year = timeNow.getFullYear();
+  const month = timeNow.getMonth() + 1;
+  let date = timeNow.getDate();
 
-export function todaysDate() {
-  let d = new Date();
-  d.setDate(d.getDate());
-  return d.toISOString().split("T")[0];
+  if (date - 1 < 10) {
+    return `${year}-${month}-0${date - 1}`;
+  } else {
+    return `${year}-${month}-${date - 1}`;
+  }
 }

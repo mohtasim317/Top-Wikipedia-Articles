@@ -1,7 +1,7 @@
 import React from "react";
 import "../DatePicker/DatePicker.css";
 import { DatePickerProps } from "../../Types/types";
-import { todaysDate } from "../../Util/util";
+import { yesterdaysDate } from "../../Util/util";
 
 function DatePicker({
   dateValue,
@@ -14,7 +14,7 @@ function DatePicker({
       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
         setDateValue(e.target.value)
       }
-      max={todaysDate()}
+      max={yesterdaysDate()}
     ></input>
   );
 }
