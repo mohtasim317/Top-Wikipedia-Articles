@@ -10,6 +10,9 @@ import NumResultsDropdown from "./Components/NumResultsDropdown/NumResultsDropdo
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
+  const [favWikiArticles, setFavWikiArticles] = useState<WikipediaArticles[]>(
+    []
+  );
   const [dateValue, setDateValue] = useState<string>(yesterdaysDate());
   const [numResults, setNumResults] = useState<number>(100);
 
@@ -47,6 +50,21 @@ function App(): JSX.Element {
           <SearchButton fetchArticles={fetchArticles}></SearchButton>
         </div>
         <ArticlesList>
+          {favWikiArticles.map(({ article, views, rank }, i) => {
+            return (
+              <ArticleTile
+                key={i}
+                article={article}
+                views={views}
+                rank={rank}
+                favWikiArticles={favWikiArticles}
+                setFavWikiArticles={setFavWikiArticles}
+                isFavList={true}
+              />
+            );
+          })}
+        </ArticlesList>
+        <ArticlesList>
           {wikiArticles.map(({ article, views, rank }, i) => {
             return (
               <ArticleTile
@@ -54,6 +72,9 @@ function App(): JSX.Element {
                 article={article}
                 views={views}
                 rank={rank}
+                favWikiArticles={favWikiArticles}
+                setFavWikiArticles={setFavWikiArticles}
+                isFavList={false}
               />
             );
           })}

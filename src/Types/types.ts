@@ -1,9 +1,18 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 export interface WikipediaArticles {
   article: string;
   views: number;
   rank: number;
+}
+
+export interface ArticleTileProps {
+  article: string;
+  views: number;
+  rank: number;
+  favWikiArticles: WikipediaArticles[];
+  setFavWikiArticles: Dispatch<SetStateAction<WikipediaArticles[]>>;
+  isFavList: boolean;
 }
 
 export interface ArticlesListProps {

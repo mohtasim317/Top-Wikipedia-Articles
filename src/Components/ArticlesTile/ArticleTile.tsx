@@ -1,17 +1,35 @@
 import React from "react";
-import { WikipediaArticles } from "../../Types/types";
+import { ArticleTileProps } from "../../Types/types";
 import "../ArticlesTile/ArticleTile.css";
 
 function ArticleTile({
   article,
   views,
   rank,
-}: WikipediaArticles): React.ReactElement {
+  favWikiArticles,
+  setFavWikiArticles,
+  isFavList,
+}: ArticleTileProps): React.ReactElement {
+  function clickHandler() {
+    if (favWikiArticles.some((favArticle) => favArticle.article === article)) {
+      setFavWikiArticles((prevState) => {
+        return prevState.filter((favArticle) => favArticle.article !== article);
+      });
+    } else {
+      setFavWikiArticles((prevState) => {
+        return [
+          ...prevState,
+          { article, views, rank, favWikiArticles, setFavWikiArticles },
+        ];
+      });
+    }
+  }
   return (
     <div className="ArticleTile">
-      <p>{rank}</p>
+      {!isFavList && <p>{rank}</p>}
+      <p>{views}</p>
       <p>{article}</p>
-      <p className="Views">{views}</p>
+      <button onClick={clickHandler}>Favorite</button>
     </div>
   );
 }
