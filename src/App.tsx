@@ -7,6 +7,7 @@ import { WikipediaArticles } from "./Types/types";
 import { yesterdaysDate } from "./Util/util";
 import "./App.css";
 import NumResultsDropdown from "./Components/NumResultsDropdown/NumResultsDropdown";
+import PaginationComponent from "./Components/Pagination/Pagination";
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
@@ -19,6 +20,15 @@ function App(): JSX.Element {
   );
   const [dateValue, setDateValue] = useState<string>(yesterdaysDate());
   const [numResults, setNumResults] = useState<number>(100);
+  const [itemOffset, setItemOffset] = useState<number>(0);
+
+  const endOffset = itemOffset + numResults;
+  const pageCount = Math.ceil(wikiArticles.length / numResults);
+
+  const handlePageClick = (event: any) => {
+    const newOffset = (event.selected * numResults) % wikiArticles.length;
+    setItemOffset(newOffset);
+  };
 
   async function fetchArticles() {
     try {
@@ -28,9 +38,8 @@ function App(): JSX.Element {
       );
       const jsonData = await fetchedData.json();
       const allArticles = jsonData.items[0].articles;
-      allArticles.length = numResults;
-
       setWikiArticles(allArticles);
+      setItemOffset(0);
     } catch (err) {
       console.log(err);
     }
@@ -69,20 +78,26 @@ function App(): JSX.Element {
           })}
         </ArticlesList>
         <ArticlesList>
-          {wikiArticles.map(({ article, views, rank }, i) => {
-            return (
-              <ArticleTile
-                key={i}
-                article={article}
-                views={views}
-                rank={rank}
-                favWikiArticles={favWikiArticles}
-                setFavWikiArticles={setFavWikiArticles}
-                isFavList={false}
-              />
-            );
-          })}
+          {wikiArticles
+            .slice(itemOffset, endOffset)
+            .map(({ article, views, rank }, i) => {
+              return (
+                <ArticleTile
+                  key={i}
+                  article={article}
+                  views={views}
+                  rank={rank}
+                  favWikiArticles={favWikiArticles}
+                  setFavWikiArticles={setFavWikiArticles}
+                  isFavList={false}
+                />
+              );
+            })}
         </ArticlesList>
+        <PaginationComponent
+          pageCount={pageCount}
+          handlePageChange={handlePageClick}
+        />
       </main>
     </div>
   );
