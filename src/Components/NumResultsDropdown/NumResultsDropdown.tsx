@@ -1,6 +1,6 @@
 import React from "react";
 import { NumResultsDropdownProps } from "../../Types/types";
-import "../DatePicker/DatePicker.css";
+import "../NumResultsDropdown/NumResultsDropdown.css";
 
 function NumResultsDropdown({
   numResults,

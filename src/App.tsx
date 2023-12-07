@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ArticleTile from "./Components/ArticlesTile/ArticleTile";
 import ArticlesList from "./Components/ArticlesList/ArticlesList";
-import DatePicker from "./Components/DatePicker/DatePicker";
-import SearchButton from "./Components/SearchButton/SearchButton";
-import NumResultsDropdown from "./Components/NumResultsDropdown/NumResultsDropdown";
 import PaginationComponent from "./Components/Pagination/Pagination";
 import { WikipediaArticles } from "./Types/types";
 import { yesterdaysDate } from "./Util/util";
 import "./App.css";
+import ActionBar from "./Components/ActionBar/ActionBar";
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
@@ -54,14 +52,13 @@ function App(): JSX.Element {
       <nav></nav>
       <main className="MainSection">
         <h1>Top Wikipedia Articles</h1>
-        <div>
-          <DatePicker dateValue={dateValue} setDateValue={setDateValue} />
-          <NumResultsDropdown
-            numResults={numResults}
-            setNumResults={setNumResults}
-          />
-          <SearchButton fetchArticles={fetchArticles}></SearchButton>
-        </div>
+        <ActionBar
+          dateValue={dateValue}
+          setDateValue={setDateValue}
+          numResults={numResults}
+          setNumResults={setNumResults}
+          fetchArticles={fetchArticles}
+        />
         {favWikiArticles.length > 0 && (
           <ArticlesList>
             {favWikiArticles.map(({ article, views, rank }, i) => {

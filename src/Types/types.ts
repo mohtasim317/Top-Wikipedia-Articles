@@ -38,3 +38,11 @@ export interface PaginationComponentProps {
   pageCount: number;
   handlePageChange: any;
 }
+
+export interface ActionBarProps {
+  dateValue: string;
+  setDateValue: (string: string) => void;
+  numResults: number;
+  setNumResults: (number: number) => void;
+  fetchArticles: () => void;
+}
