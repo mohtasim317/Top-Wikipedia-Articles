@@ -1,5 +1,6 @@
 .SearchButton {
-  width: 160px;
+  max-width: 160px;
+  width: 90%;
   padding: 12px 24px;
   color: var(--neutral-000, #fff);
   text-align: center;
@@ -10,4 +11,11 @@
   line-height: 24px; /* 150% */
   border-radius: 100px;
   background: var(--brand-green-500, #025b4b);
+}
+
+@media (max-width: 480px) {
+  .SearchButton {
+    max-width: 100%;
+    width: 100%;
+  }
 }

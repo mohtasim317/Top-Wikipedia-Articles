@@ -26,6 +26,10 @@
   border-left: 1px solid #d4d8d9;
 }
 
+.DatePicker {
+  padding-right: 30px;
+}
+
 .ActionBarRight {
   width: 25%;
   display: flex;
@@ -49,4 +53,37 @@ input {
 
 input {
   border: 0;
+}
+
+@media (max-width: 480px) {
+  .ActionBar {
+    flex-direction: column;
+    height: 228px;
+  }
+
+  .ActionBarLeft {
+    flex-direction: column;
+  }
+
+  .ActionBarRight {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Dropdown {
+    border-left: 0;
+    padding-left: 0px;
+  }
+
+  .DatePicker {
+    padding-right: 0px;
+  }
+
+  .DatePicker,
+  .Dropdown {
+    display: flex;
+    justify-content: center;
+    width: 236px;
+  }
 }
