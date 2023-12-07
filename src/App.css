@@ -41,19 +41,7 @@ h1 {
   letter-spacing: -0.8px;
 }
 
-.ActionBar {
-  background-color: white;
-  border-radius: 16px;
-  max-width: 800px;
-  width: 800px;
-  height: 96px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 16px;
-  margin-bottom: 12px;
-}
+
 
 @media (max-width: 480px) {
   nav {
@@ -66,10 +54,4 @@ h1 {
   }
 }
 
-.ActionBarLeft {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
 
