@@ -11,7 +11,11 @@ import NumResultsDropdown from "./Components/NumResultsDropdown/NumResultsDropdo
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
   const [favWikiArticles, setFavWikiArticles] = useState<WikipediaArticles[]>(
-    []
+    () => {
+      const savedData = localStorage.getItem("favWikiArticles") || "[]";
+      const initialValue = JSON.parse(savedData);
+      return initialValue || [];
+    }
   );
   const [dateValue, setDateValue] = useState<string>(yesterdaysDate());
   const [numResults, setNumResults] = useState<number>(100);
