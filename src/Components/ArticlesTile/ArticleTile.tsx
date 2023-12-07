@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ArticleTileProps } from "../../Types/types";
 import "../ArticlesTile/ArticleTile.css";
 import favoritedPin from "../../Images/favoritedPin.svg";
