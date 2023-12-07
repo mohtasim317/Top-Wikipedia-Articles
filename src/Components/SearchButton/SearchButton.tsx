@@ -1,6 +1,6 @@
 import React from "react";
-import "../SearchButton/SearchButton.css";
 import { SearchButtonProps } from "../../Types/types";
+import "../SearchButton/SearchButton.css";
 
 function SearchButton({
   fetchArticles,

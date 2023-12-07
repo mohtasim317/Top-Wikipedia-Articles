@@ -3,11 +3,11 @@ import ArticleTile from "./Components/ArticlesTile/ArticleTile";
 import ArticlesList from "./Components/ArticlesList/ArticlesList";
 import DatePicker from "./Components/DatePicker/DatePicker";
 import SearchButton from "./Components/SearchButton/SearchButton";
+import NumResultsDropdown from "./Components/NumResultsDropdown/NumResultsDropdown";
+import PaginationComponent from "./Components/Pagination/Pagination";
 import { WikipediaArticles } from "./Types/types";
 import { yesterdaysDate } from "./Util/util";
 import "./App.css";
-import NumResultsDropdown from "./Components/NumResultsDropdown/NumResultsDropdown";
-import PaginationComponent from "./Components/Pagination/Pagination";
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);

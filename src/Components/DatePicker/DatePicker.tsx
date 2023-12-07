@@ -1,7 +1,7 @@
 import React from "react";
-import "../DatePicker/DatePicker.css";
 import { DatePickerProps } from "../../Types/types";
 import { yesterdaysDate } from "../../Util/util";
+import "../DatePicker/DatePicker.css";
 
 function DatePicker({
   dateValue,

@@ -1,10 +1,6 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
-
-interface PaginationComponentProps {
-  pageCount: number;
-  handlePageChange: any;
-}
+import { PaginationComponentProps } from "../../Types/types";
 
 function PaginationComponent({
   pageCount,

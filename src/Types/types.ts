@@ -32,3 +32,8 @@ export interface NumResultsDropdownProps {
   numResults: number;
   setNumResults: (number: number) => void;
 }
+
+export interface PaginationComponentProps {
+  pageCount: number;
+  handlePageChange: any;
+}
