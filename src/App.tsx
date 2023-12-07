@@ -6,10 +6,12 @@ import SearchButton from "./Components/SearchButton/SearchButton";
 import { WikipediaArticles } from "./Types/types";
 import { yesterdaysDate } from "./Util/util";
 import "./App.css";
+import NumResultsDropdown from "./Components/NumResultsDropdown/NumResultsDropdown";
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
   const [dateValue, setDateValue] = useState<string>(yesterdaysDate());
+  const [numResults, setNumResults] = useState<number>(100);
 
   async function fetchArticles() {
     try {
@@ -19,6 +21,7 @@ function App(): JSX.Element {
       );
       const jsonData = await fetchedData.json();
       const allArticles = jsonData.items[0].articles;
+      allArticles.length = numResults;
 
       setWikiArticles(allArticles);
     } catch (err) {
@@ -37,6 +40,10 @@ function App(): JSX.Element {
         <h1>Top Wikipedia Articles</h1>
         <div>
           <DatePicker dateValue={dateValue} setDateValue={setDateValue} />
+          <NumResultsDropdown
+            numResults={numResults}
+            setNumResults={setNumResults}
+          />
           <SearchButton fetchArticles={fetchArticles}></SearchButton>
         </div>
         <ArticlesList>

@@ -1,7 +1,6 @@
 export function yesterdaysDate() {
   let d = new Date();
   d.setDate(d.getDate() - 1);
-  console.log(d.toISOString().split("T")[0] + 1);
   return d.toISOString().split("T")[0];
 }
 

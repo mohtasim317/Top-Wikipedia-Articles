@@ -18,3 +18,8 @@ export interface DatePickerProps {
   dateValue: string;
   setDateValue: (string: string) => void;
 }
+
+export interface NumResultsDropdownProps {
+  numResults: number;
+  setNumResults: (number: number) => void;
+}
