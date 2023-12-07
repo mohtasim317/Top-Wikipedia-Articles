@@ -1,0 +1,76 @@
+.PaginationContainer {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  height: 40px;
+  width: 40px;
+  color: black;
+  border-radius: 40px;
+  border: solid 1px #d4d8d9;
+  background-color: white;
+  margin: 0px 4px;
+  font-family: Poppins;
+}
+
+.active {
+  border: solid 1px #e0e9cb;
+  color: #025b4b;
+  background-color: #e0e9cb;
+}
+
+.break {
+}
+
+.next,
+.previous {
+  font-size: 14px;
+  color: #025b4b;
+}
+
+.next {
+  margin-left: 20px;
+}
+
+.disabled-page {
+  color: #737680;
+  background-color: #d4d8d9;
+  border: solid 1px #d4d8d9;
+}
+.previous {
+  margin-right: 20px;
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  justify-content: center;
+  list-style-type: none;
+  position: relative;
+  max-width: 800px;
+  padding: 0px;
+}
+
+.pagination-page {
+  font-weight: 700;
+}
+
+a {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+}
