@@ -62,21 +62,24 @@ function App(): JSX.Element {
           />
           <SearchButton fetchArticles={fetchArticles}></SearchButton>
         </div>
-        <ArticlesList>
-          {favWikiArticles.map(({ article, views, rank }, i) => {
-            return (
-              <ArticleTile
-                key={i}
-                article={article}
-                views={views}
-                rank={rank}
-                favWikiArticles={favWikiArticles}
-                setFavWikiArticles={setFavWikiArticles}
-                isFavList={true}
-              />
-            );
-          })}
-        </ArticlesList>
+        {favWikiArticles.length > 0 && (
+          <ArticlesList>
+            {favWikiArticles.map(({ article, views, rank }, i) => {
+              return (
+                <ArticleTile
+                  key={i}
+                  article={article}
+                  views={views}
+                  rank={rank}
+                  favWikiArticles={favWikiArticles}
+                  setFavWikiArticles={setFavWikiArticles}
+                  showRank={true}
+                  isFavorite={true}
+                />
+              );
+            })}
+          </ArticlesList>
+        )}
         <ArticlesList>
           {wikiArticles
             .slice(itemOffset, endOffset)
@@ -89,7 +92,14 @@ function App(): JSX.Element {
                   rank={rank}
                   favWikiArticles={favWikiArticles}
                   setFavWikiArticles={setFavWikiArticles}
-                  isFavList={false}
+                  showRank={false}
+                  isFavorite={
+                    favWikiArticles.some(
+                      (favArticle) => favArticle.article === article
+                    )
+                      ? true
+                      : false
+                  }
                 />
               );
             })}

@@ -1,8 +1,65 @@
 .ArticleTile {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border: 1px solid rgb(115, 118, 128);
+  border: 1px solid rgb(231, 234, 235);
   padding: 24px;
-  margin: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.LeftSide,
+.RightSide {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.LeftSide {
+  /* overflow: auto; */
+}
+
+.FavoriteButtonContainer {
+  margin-left: 20px;
+}
+
+.Rank {
+  margin-right: 20px;
+  color: var(--neutral-500, #a7aaab);
+  font-family: Lora;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.Article {
+  font-style: normal;
+  margin-right: 20px;
+  color: #000;
+  font-family: Lora;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  word-break: break-word;
+}
+
+.Article.p {
+  overflow: hidden;
+}
+
+.Views {
+  color: var(--neutral-600, #737680);
+  text-align: right;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.FavoriteButton {
+  all: unset;
 }

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArticleTileProps } from "../../Types/types";
 import "../ArticlesTile/ArticleTile.css";
+import favoritedPin from "../../Images/favoritedPin.svg";
+import unFavoritedPin from "../../Images/unFavoritedPin.svg";
 
 function ArticleTile({
   article,
@@ -8,7 +10,8 @@ function ArticleTile({
   rank,
   favWikiArticles,
   setFavWikiArticles,
-  isFavList,
+  showRank,
+  isFavorite,
 }: ArticleTileProps): React.ReactElement {
   function clickHandler() {
     if (favWikiArticles.some((favArticle) => favArticle.article === article)) {
@@ -33,10 +36,26 @@ function ArticleTile({
 
   return (
     <div className="ArticleTile">
-      {!isFavList && <p>{rank}</p>}
-      <p>{article}</p>
-      <p>{views}</p>
-      <button onClick={clickHandler}>Favorite</button>
+      <div className="LeftSide">
+        <div className="Rank">{!showRank && <p>{rank}</p>}</div>
+        <div className="Article">
+          <p>{article}</p>
+        </div>
+      </div>
+      <div className="RightSide">
+        <div className="Views">
+          <p>{views} views</p>
+        </div>
+        <div className="FavoriteButtonContainer">
+          <button onClick={clickHandler} className="FavoriteButton">
+            <img
+              src={isFavorite ? favoritedPin : unFavoritedPin}
+              alt="favoritedPin"
+              className="src"
+            />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

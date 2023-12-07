@@ -12,7 +12,8 @@ export interface ArticleTileProps {
   rank: number;
   favWikiArticles: WikipediaArticles[];
   setFavWikiArticles: Dispatch<SetStateAction<WikipediaArticles[]>>;
-  isFavList: boolean;
+  showRank: boolean;
+  isFavorite: boolean;
 }
 
 export interface ArticlesListProps {
