@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import ArticleTile from "./Components/ArticlesTile/ArticleTile";
 import ArticlesList from "./Components/ArticlesList/ArticlesList";
 import PaginationComponent from "./Components/Pagination/Pagination";
+import ActionBar from "./Components/ActionBar/ActionBar";
 import { WikipediaArticles } from "./Types/types";
 import { yesterdaysDate } from "./Util/util";
 import "./App.css";
-import ActionBar from "./Components/ActionBar/ActionBar";
 
 function App(): JSX.Element {
   const [wikiArticles, setWikiArticles] = useState<WikipediaArticles[]>([]);
