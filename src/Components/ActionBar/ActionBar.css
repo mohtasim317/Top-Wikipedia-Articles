@@ -46,7 +46,6 @@
 select,
 input {
   width: 80%;
-  text-align-last: center;
   font-family: Poppins;
   font-size: 16px;
 }
@@ -57,13 +56,14 @@ input {
 
 label {
   font-family: Poppins;
-  margin-left: 5px;
+  margin-left: 2px;
 }
 
 @media (max-width: 480px) {
   .ActionBar {
     flex-direction: column;
     height: 228px;
+    align-items: flex-start;
   }
 
   .ActionBarLeft {
@@ -79,16 +79,14 @@ label {
   .Dropdown {
     border-left: 0;
     padding-left: 0px;
-  }
-
-  .Dropdown {
     display: flex;
     justify-content: center;
     width: 236px;
+    margin-right: 10px;
   }
 
   label {
     font-family: Poppins;
-    margin-left: 12px;
+    /* margin-left: 12px; */
   }
 }
