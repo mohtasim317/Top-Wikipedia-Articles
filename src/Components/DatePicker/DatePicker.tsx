@@ -8,14 +8,18 @@ function DatePicker({
   setDateValue,
 }: DatePickerProps): React.ReactElement {
   return (
-    <input
-      type="date"
-      value={dateValue}
-      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-        setDateValue(e.target.value)
-      }
-      max={yesterdaysDate()}
-    ></input>
+    <div className="DatePicker">
+      <label htmlFor="datepicker">Date </label>
+      <input
+        name="datepicker"
+        type="date"
+        value={dateValue}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setDateValue(e.target.value)
+        }
+        max={yesterdaysDate()}
+      ></input>
+    </div>
   );
 }
 

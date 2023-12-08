@@ -22,12 +22,12 @@
 }
 
 .Dropdown {
-  padding-left: 30px;
+  padding-left: 5%;
   border-left: 1px solid #d4d8d9;
 }
 
-.DatePicker {
-  padding-right: 30px;
+.DatePickerSection {
+  padding-right: 20px;
 }
 
 .ActionBarRight {
@@ -36,7 +36,7 @@
   justify-content: flex-end;
 }
 
-.DatePicker,
+.DatePickerSection,
 .Dropdown {
   display: flex;
   justify-content: center;
@@ -53,6 +53,11 @@ input {
 
 input {
   border: 0;
+}
+
+label {
+  font-family: Poppins;
+  margin-left: 5px;
 }
 
 @media (max-width: 480px) {
@@ -76,14 +81,14 @@ input {
     padding-left: 0px;
   }
 
-  .DatePicker {
-    padding-right: 0px;
-  }
-
-  .DatePicker,
   .Dropdown {
     display: flex;
     justify-content: center;
     width: 236px;
+  }
+
+  label {
+    font-family: Poppins;
+    margin-left: 12px;
   }
 }

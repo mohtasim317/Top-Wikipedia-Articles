@@ -1,0 +1,15 @@
+.DatePicker {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 236px;
+}
+
+@media (max-width: 480px) {
+  .DatePicker {
+    display: flex;
+    justify-content: center;
+    width: 236px;
+  }
+}

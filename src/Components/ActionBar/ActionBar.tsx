@@ -17,7 +17,7 @@ function ActionBar({
   return (
     <div className="ActionBar">
       <div className="ActionBarLeft">
-        <div className="DatePicker">
+        <div className="DatePickerSection">
           <img src={calendar} alt="calendar icon" className="src" />
           <DatePicker dateValue={dateValue} setDateValue={setDateValue} />
         </div>
