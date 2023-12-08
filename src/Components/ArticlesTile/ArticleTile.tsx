@@ -1,5 +1,5 @@
 import React from "react";
-import { ArticleTileProps } from "../../Types/types";
+import { ArticleTileProps, WikipediaArticles } from "../../Types/types";
 import favoritedPin from "../../Images/favoritedPin.svg";
 import unFavoritedPin from "../../Images/unFavoritedPin.svg";
 import "./ArticleTile.css";
@@ -13,7 +13,7 @@ function ArticleTile({
   showRank,
   isFavorite,
 }: ArticleTileProps): React.ReactElement {
-  function clickHandler() {
+  function clickHandler(): void {
     if (favWikiArticles.some((favArticle) => favArticle.article === article)) {
       setFavWikiArticles((prevState) => {
         const filtered = prevState.filter(
