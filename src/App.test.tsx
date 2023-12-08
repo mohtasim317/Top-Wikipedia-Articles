@@ -3,24 +3,15 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 describe("App Component", () => {
-  it("should have a Title", () => {
+  it("should have a Title, DatePicker, DropDownm and SearchButton components", () => {
     render(<App />);
-    const element = screen.getByText("Top Wikipedia Articles");
-    expect(element).toBeInTheDocument();
-  });
-  it("should have a DatePicker", () => {
-    render(<App />);
-    const element = screen.getByText("Date");
-    expect(element).toBeInTheDocument();
-  });
-  it("should have a Dropdown", () => {
-    render(<App />);
-    const element = screen.getByText("Num Results");
-    expect(element).toBeInTheDocument();
-  });
-  it("should have a SearchButton", () => {
-    render(<App />);
-    const element = screen.getByRole("button");
-    expect(element).toBeInTheDocument();
+    const Title = screen.getByText("Top Wikipedia Articles");
+    expect(Title).toBeInTheDocument();
+    const DatePicker = screen.getByText("Date");
+    expect(DatePicker).toBeInTheDocument();
+    const DropDown = screen.getByText("Num Results");
+    expect(DropDown).toBeInTheDocument();
+    const SearchButton = screen.getByRole("button");
+    expect(SearchButton).toBeInTheDocument();
   });
 });

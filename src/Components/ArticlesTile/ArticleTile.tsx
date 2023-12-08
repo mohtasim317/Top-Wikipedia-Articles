@@ -50,7 +50,7 @@ function ArticleTile({
           <button onClick={clickHandler} className="FavoriteButton">
             <img
               src={isFavorite ? favoritedPin : unFavoritedPin}
-              alt="favoritedPin"
+              alt={isFavorite ? "Favorited Pin" : "Non Favorited Pin"}
               className="src"
             />
           </button>
