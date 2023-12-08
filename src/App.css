@@ -41,8 +41,6 @@ h1 {
   letter-spacing: -0.8px;
 }
 
-
-
 @media (max-width: 480px) {
   nav {
     height: 72px;
@@ -53,5 +51,3 @@ h1 {
     letter-spacing: -0.56px;
   }
 }
-
-
