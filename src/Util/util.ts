@@ -5,8 +5,8 @@ export function yesterdaysDate() {
   let date = timeNow.getDate();
 
   if (date - 1 < 10) {
-    return `${year}-${month}-0${date - 1}`;
+    return `${year}-0${month}-0${date - 1}`;
   } else {
-    return `${year}-${month}-${date - 1}`;
+    return `${year}-0${month}-${date - 1}`;
   }
 }
