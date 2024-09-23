@@ -1,10 +1,10 @@
-# Grow Therapy Frontend Takehome
+# Top Wikipedia Articles Viewer
 
 Open up a terminal and enter the folder you want to download this project to.
 Clone this repo using the following command:
 
 ```
-git clone https://github.com/mohtasim317/grow-therapy-takehome
+git clone https://github.com/mohtasim317/Top-Wikipedia-Articles/
 ```
 
 Enter the project directory and run the following command to install all necessary packages/libraries:
