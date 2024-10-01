@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ArticleTile from "./Components/ArticlesTile/ArticleTile";
 import ArticlesList from "./Components/ArticlesList/ArticlesList";
 import PaginationComponent from "./Components/Pagination/Pagination";
@@ -45,6 +45,7 @@ function App(): JSX.Element {
 
   useEffect(() => {
     fetchArticles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
