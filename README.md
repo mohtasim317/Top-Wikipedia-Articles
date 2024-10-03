@@ -32,3 +32,9 @@ The terminal will show you which port the project is running on (should default 
 -Used the "react-paginate" library to add pagination functionality. Users can scroll through 1000 articles using the buttons on the bottom of the page.
 
 -Users can pin articles to the top of the page by clicking the pin on an article tile. Users can also unpin articles from both the list of pinned articles and the main list of articles by clicking the pin again. Pinned article data is saved to local storage and persists between page reloads.
+
+## Figma Designs:
+
+![1](https://github.com/user-attachments/assets/af99e44c-b5bf-44af-be1f-c586a52d5745)
+![2](https://github.com/user-attachments/assets/3dbe3666-9006-4bcf-b6d2-b8ba55cbec16)
+![3](https://github.com/user-attachments/assets/1be8cb1d-a0e7-4963-a05a-1021adff127d)
