@@ -46,7 +46,7 @@
 select,
 input {
   width: 80%;
-  font-family: Poppins;
+  font-family: Arial;
   font-size: 16px;
 }
 
@@ -55,7 +55,7 @@ input {
 }
 
 label {
-  font-family: Poppins;
+  font-family: Arial;
   margin-left: 2px;
 }
 
@@ -86,7 +86,7 @@ label {
   }
 
   label {
-    font-family: Poppins;
+    font-family: Arial;
     /* margin-left: 12px; */
   }
 }
