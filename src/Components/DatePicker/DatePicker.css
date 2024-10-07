@@ -6,10 +6,8 @@
   width: 236px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .DatePicker {
-    display: flex;
-    justify-content: center;
-    width: 236px;
+    margin-left: 10px;
   }
 }

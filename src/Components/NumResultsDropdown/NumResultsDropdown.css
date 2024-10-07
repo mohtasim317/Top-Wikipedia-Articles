@@ -4,4 +4,17 @@ select {
 
 .DropdownAndLabel {
   margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dropdown {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .DropdownAndLabel {
+    margin-left: 10px;
+  }
 }

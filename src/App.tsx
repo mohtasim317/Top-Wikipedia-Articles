@@ -50,7 +50,6 @@ function App(): JSX.Element {
 
   return (
     <div className="App">
-      <nav></nav>
       <main className="MainSection">
         <h1>Top Wikipedia Articles</h1>
         <ActionBar
