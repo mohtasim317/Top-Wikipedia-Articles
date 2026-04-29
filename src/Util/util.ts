@@ -1,12 +1,10 @@
 export function yesterdaysDate() {
-  const timeNow = new Date();
-  const year = timeNow.getFullYear();
-  const month = timeNow.getMonth() + 1;
-  let date = timeNow.getDate();
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
 
-  if (date - 1 < 10) {
-    return `${year}-0${month}-0${date - 1}`;
-  } else {
-    return `${year}-0${month}-${date - 1}`;
-  }
+  const year = yesterday.getFullYear();
+  const month = String(yesterday.getMonth() + 1).padStart(2, "0");
+  const date = String(yesterday.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${date}`;
 }
