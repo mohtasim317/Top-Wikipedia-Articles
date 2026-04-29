@@ -1,7 +1,7 @@
 .ArticlesList {
   display: flex;
   flex-direction: column;
-  min-width: 400px;
+  min-width: 350px;
   max-width: 800px;
   width: 100%;
   background-color: #ffffff;
